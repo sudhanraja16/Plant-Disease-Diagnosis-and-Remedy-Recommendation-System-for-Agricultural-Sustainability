@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="Upload">
+    </form>
+	<br>
+
+    <hr>
+
+    {% for image in images %}
+        <div>
+            <h3>{{ image.filename }}</h3>
+            <img src="data:image/jpeg;base64,{{ image.data }}" width="400px">
+
+            <h4>Comments:</h4>
+            <center>
+            <ul>
+                {% for comment in image.comments %}
+                    <li style="color:blue"><strong>{{ comment.name }}:</strong> {{ comment.comment }}</li>
+                {% endfor %}
+            </ul>
+
+                </center>
+        </div>
+    {% endfor %}
+
+
+<a style="position: absolute; top:70px; right: 84px ;
+  background-color: forestgreen;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  font-weight : 400" href="{{ url_for('login') }}">Logout</a>
+
+
+
+
+</body>
+</html>
