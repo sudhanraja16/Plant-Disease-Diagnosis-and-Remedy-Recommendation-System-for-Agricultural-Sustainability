@@ -16,9 +16,9 @@ from unicodedata import category
 
 conn = psycopg2.connect(
     host="localhost",
-    database="plantuser",
+    database="plant****",
     user="postgres",
-    password="1234",
+    password="****",
     port="5432"
 )
 cursor = conn.cursor()
