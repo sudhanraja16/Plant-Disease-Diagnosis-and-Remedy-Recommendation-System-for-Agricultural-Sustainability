@@ -9,9 +9,6 @@ from tensorflow.keras.preprocessing.image import load_img
 from tensorflow.keras.applications.vgg16 import preprocess_input
 import os
 from tensorflow.keras.preprocessing import image
-
-from flask import Flask,render_template,request
-from tensorflow.keras.models import load_model
 from unicodedata import category
 
 conn = psycopg2.connect(
